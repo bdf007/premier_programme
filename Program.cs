@@ -10,22 +10,28 @@ namespace premier_programme
             Console.Write("Quel est ton nom? ");
             string nomDeLaPersonne = Console.ReadLine();
 
-            Console.Write(  "Quek est votre age? ");
-            string ageDeLaPersonne = Console.ReadLine();
             int age_num = 0;
-            try 
-            {
-            age_num= int.Parse(ageDeLaPersonne);
-                
-            Console.WriteLine("Bonjour vous vous appelez " + nomDeLaPersonne + ", vous avez " + age_num + " ans.");
 
-            int age_prochain= age_num + 1;
-            Console.WriteLine("L'année prochaine vous aurez " + age_prochain + " ans.");
+            while (age_num == 0)
+            {
+
+            Console.Write("Quek est votre age? ");
+            string ageDeLaPersonne = Console.ReadLine();
+            try
+            {
+                age_num = int.Parse(ageDeLaPersonne);
+
             }
             catch
             {
                 Console.WriteLine("Erreur, vous devez rentrer un age valide");
             }
+            }
+                Console.WriteLine("Bonjour vous vous appelez " + nomDeLaPersonne + ", vous avez " + age_num + " ans.");
+
+                int age_prochain = age_num + 1;
+                Console.WriteLine("L'année prochaine vous aurez " + age_prochain + " ans.");
+
         }
     }
 }
