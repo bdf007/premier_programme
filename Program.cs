@@ -7,8 +7,19 @@ namespace premier_programme
     {
         static void Main(string[] args)
         {
-            Console.Write("Quel est ton nom? ");
-            string nomDeLaPersonne = Console.ReadLine();
+            string nomDeLaPersonne = "";
+
+            while (nomDeLaPersonne == "")
+            {
+                Console.Write("Quel est ton nom? ");
+                nomDeLaPersonne = Console.ReadLine();
+                nomDeLaPersonne = nomDeLaPersonne.Trim();
+                if (nomDeLaPersonne == "")
+                {
+                    Console.WriteLine("Erreur: vous devez rentrer un nom");
+                }
+            }
+          
 
             int age_num = 0;
 
