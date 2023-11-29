@@ -96,7 +96,7 @@ namespace premier_programme
             if (taille != 0)
             {
 
-            Console.WriteLine("Wous faites " + taille + "m");
+            Console.WriteLine("Vous faites " + taille + "m");
             }
         }
 
