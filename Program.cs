@@ -53,6 +53,12 @@ namespace premier_programme
             Console.WriteLine("Bonjour vous vous appelez " + nom + ", vous avez " + age + " ans.");
 
             // si age >= 18 afficher majeur sinon mineur
+            // si age == 18 afficher tout juste majeur
+            // si age == 17 afficher presque majeur
+            // age >= 60 afficher senior
+            // age <10 afficher enfant
+            // age >= 12 et age < 18 adolescent
+            // age==1 ou age ==2 bébé
             if (age == 18)
             {
                 Console.WriteLine("Vous êtes tout juste majeur");
@@ -61,10 +67,26 @@ namespace premier_programme
             {
                 Console.WriteLine("Vous êtes presque majeur");
             }
+            else if ((age >= 12) && (age <18))
+            {
+                Console.WriteLine("Vous êtes un adolescent");
+            }
+            else if ((age == 1) || (age == 2))
+            {
+                Console.WriteLine("Vous êtes un bébé");
+            }
+            else if (age >= 60)
+            {
+                Console.WriteLine("Vous êtes un senior");
+            }
             else if (age > 18)
             {
                 Console.WriteLine("Vous êtes majeur");
-            }            
+            }              
+            else if (age < 10)
+            {
+                Console.WriteLine("Vous êtes un enfant");
+             }
             else
             {
                 Console.WriteLine("Vous êtes mineur");
@@ -77,15 +99,14 @@ namespace premier_programme
             //Demander nom
             string nom1 = DemanderNom(1);
             string nom2 = DemanderNom(2);
-          
+                     
             //Demander Age
             int age1 = DemanderAge(nom1);
             int age2 = DemanderAge(nom2);
-
+          
             // afficher les infos
             AfficherInfosPersonne (nom1, age1);
             AfficherInfosPersonne (nom2, age2);
-
         }
 
         
