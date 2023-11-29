@@ -47,10 +47,11 @@ namespace premier_programme
             return age_num;
         }
 
-        static void AfficherInfosPersonne (string nom, int age)
+        static void AfficherInfosPersonne (string nom, int age, float taille =0)
         {
             Console.WriteLine();
-            Console.WriteLine("Bonjour vous vous appelez " + nom + ", vous avez " + age + " ans.");
+/*            Console.WriteLine("Bonjour vous vous appelez " + nom + ", vous avez " + age + " ans.");
+*/            Console.WriteLine($"Bonjour vous vous appelez {nom},\nvous avez {age} ans.");
 
             // si age >= 18 afficher majeur sinon mineur
             // si age == 18 afficher tout juste majeur
@@ -92,6 +93,11 @@ namespace premier_programme
                 Console.WriteLine("Vous êtes mineur");
             }
             Console.WriteLine("L'année prochaine vous aurez " + (age+1) + " ans.");
+            if (taille != 0)
+            {
+
+            Console.WriteLine("Wous faites " + taille + "m");
+            }
         }
 
         static void Main(string[] args)
@@ -99,14 +105,26 @@ namespace premier_programme
             //Demander nom
             string nom1 = DemanderNom(1);
             string nom2 = DemanderNom(2);
-                     
+
             //Demander Age
             int age1 = DemanderAge(nom1);
             int age2 = DemanderAge(nom2);
-          
+
             // afficher les infos
-            AfficherInfosPersonne (nom1, age1);
-            AfficherInfosPersonne (nom2, age2);
+            AfficherInfosPersonne(nom1, age1, 1.75f);
+            AfficherInfosPersonne(nom2, age2);
+
+            /*            float taille = 1.75f;
+            */
+            /* const int nbPersonne = 3;
+             for (int i = 0; i<nbPersonne; i++)
+             {
+                 string nom = DemanderNom(i+1);
+                 int age =DemanderAge(nom);
+                 AfficherInfosPersonne(nom, age, 1.75f);
+                 Console.WriteLine();
+                 Console.WriteLine("--");
+             }*/
         }
 
         
