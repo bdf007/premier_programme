@@ -64,6 +64,7 @@ namespace premier_programme
             int age1 = DemanderAge(nom1);
             int age2 = DemanderAge(nom2);
 
+            // afficher les infos
             AfficherInfosPersonne (nom1, age1);
             AfficherInfosPersonne (nom2, age2);
 
