@@ -51,6 +51,24 @@ namespace premier_programme
         {
             Console.WriteLine();
             Console.WriteLine("Bonjour vous vous appelez " + nom + ", vous avez " + age + " ans.");
+
+            // si age >= 18 afficher majeur sinon mineur
+            if (age == 18)
+            {
+                Console.WriteLine("Vous êtes tout juste majeur");
+            }
+            else if (age == 17)
+            {
+                Console.WriteLine("Vous êtes presque majeur");
+            }
+            else if (age > 18)
+            {
+                Console.WriteLine("Vous êtes majeur");
+            }            
+            else
+            {
+                Console.WriteLine("Vous êtes mineur");
+            }
             Console.WriteLine("L'année prochaine vous aurez " + (age+1) + " ans.");
         }
 
