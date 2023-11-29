@@ -5,13 +5,12 @@ namespace premier_programme
 {
     class Program
     {
-        static void Main(string[] args)
+        static string DemanderNom( int numeroPersonne)
         {
             string nomDeLaPersonne = "";
-
             while (nomDeLaPersonne == "")
             {
-                Console.Write("Quel est ton nom? ");
+                Console.Write("Quel est le nom de la personne " + numeroPersonne + "? ");
                 nomDeLaPersonne = Console.ReadLine();
                 nomDeLaPersonne = nomDeLaPersonne.Trim();
                 if (nomDeLaPersonne == "")
@@ -19,38 +18,58 @@ namespace premier_programme
                     Console.WriteLine("Erreur: vous devez rentrer un nom");
                 }
             }
-          
-
+            return nomDeLaPersonne;
+        }
+        static int DemanderAge(string nom)
+        {
             int age_num = 0;
-
             while (age_num <= 0)
             {
-
-            Console.Write("Quek est votre age? ");
-            string ageDeLaPersonne = Console.ReadLine();
-            try
-            {
-                age_num = int.Parse(ageDeLaPersonne);
-                    if (age_num < 0) {
+                Console.Write("Quek est l'age de "+ nom + "? ");
+                string ageDeLaPersonne = Console.ReadLine();
+                try
+                {
+                    age_num = int.Parse(ageDeLaPersonne);
+                    if (age_num < 0)
+                    {
                         Console.WriteLine("Erreur: l'age ne peut pas etre négatif");
                     }
-                    if(age_num ==0)
+                    if (age_num == 0)
                     {
                         Console.WriteLine("Erreur: l'age ne peut pas etre égal à zéro");
                     }
+                }
+                catch
+                {
+                    Console.WriteLine("Erreur: vous devez rentrer un age valide");
+                }
+            }
+            return age_num;
+        }
 
-            }
-            catch
-            {
-                Console.WriteLine("Erreur: vous devez rentrer un age valide");
-            }
-            }
-                Console.WriteLine("Bonjour vous vous appelez " + nomDeLaPersonne + ", vous avez " + age_num + " ans.");
+        static void AfficherInfosPersonne (string nom, int age)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Bonjour vous vous appelez " + nom + ", vous avez " + age + " ans.");
+            Console.WriteLine("L'année prochaine vous aurez " + (age+1) + " ans.");
+        }
 
-                int age_prochain = age_num + 1;
-                Console.WriteLine("L'année prochaine vous aurez " + age_prochain + " ans.");
+        static void Main(string[] args)
+        {
+            //Demander nom
+            string nom1 = DemanderNom(1);
+            string nom2 = DemanderNom(2);
+          
+            //Demander Age
+            int age1 = DemanderAge(nom1);
+            int age2 = DemanderAge(nom2);
+
+            AfficherInfosPersonne (nom1, age1);
+            AfficherInfosPersonne (nom2, age2);
 
         }
+
+        
     }
 }
 
