@@ -12,7 +12,7 @@ namespace premier_programme
 
             int age_num = 0;
 
-            while (age_num == 0)
+            while (age_num <= 0)
             {
 
             Console.Write("Quek est votre age? ");
@@ -20,11 +20,18 @@ namespace premier_programme
             try
             {
                 age_num = int.Parse(ageDeLaPersonne);
+                    if (age_num < 0) {
+                        Console.WriteLine("Erreur: l'age ne peut pas etre négatif");
+                    }
+                    if(age_num ==0)
+                    {
+                        Console.WriteLine("Erreur: l'age ne peut pas etre égal à zéro");
+                    }
 
             }
             catch
             {
-                Console.WriteLine("Erreur, vous devez rentrer un age valide");
+                Console.WriteLine("Erreur: vous devez rentrer un age valide");
             }
             }
                 Console.WriteLine("Bonjour vous vous appelez " + nomDeLaPersonne + ", vous avez " + age_num + " ans.");
